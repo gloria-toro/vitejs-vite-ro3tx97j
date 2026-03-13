@@ -514,10 +514,10 @@ function VistaIndividual({ rawData, empresas, years, empColors }: any) {
           icon: CANAL_ICONS[canal] || '📦',
           ...t,
           ganancia: g,
-          margen: (!t.v || !isFinite(g/t.v)) ? '--' : ((g/t.v)*100).toFixed(1)
-          pesoCosto: (!t.v || !isFinite(t.c/t.v)) ? '--' : ((t.c/t.v)*100).toFixed(1),
-          pesoMktg: (!t.v || !isFinite(t.m/t.v)) ? '--' : ((t.m/t.v)*100).toFixed(1),
-          roasVal: (!t.m || !isFinite(t.v/t.m)) ? '--' : (t.v/t.m).toFixed(2)
+          margen: (!t.v || !isFinite(g/t.v)) ? "-" : ((g/t.v)*100).toFixed(1),
+          pesoCosto: (!t.v || !isFinite(g/t.v)) ? "-" : ((t.c/t.v)*100).toFixed(1),
+          pesoMktg: (!t.v || !isFinite(t.m/t.v)) ? "-" : ((t.m/t.v)*100).toFixed(1),
+          roasVal: (!t.m || !isFinite(t.v/t.m)) ? "-" : (t.v/t.m).toFixed(2),
         };
       }),
     [rawData, empresa, yearCurr, canales, mesDesde, mesHasta]
@@ -1478,10 +1478,10 @@ function VistaComparativa({ rawData, empresas, years, empColors }: any) {
           color: empColors[i] || '#888',
           ...t,
           ganancia: g,
-          margen: (!t.v || !isFinite(g/t.v)) ? '--' : ((g/t.v)*100).toFixed(1)
-          pesoCosto: (!t.v || !isFinite(t.c/t.v)) ? '--' : ((t.c/t.v)*100).toFixed(1),
-          ppesoMktg: (!t.v || !isFinite(t.m/t.v)) ? '--' : ((t.m/t.v)*100).toFixed(1),
-          roasVal: (!t.m || !isFinite(t.v/t.m)) ? '--' : (t.v/t.m).toFixed(2)
+          margen: (!t.v || !isFinite(g/t.v)) ? "--" : ((g/t.v)*100).toFixed(1),
+          pesoCosto: (!t.v || !isFinite(t.c/t.v)) ? "--" : ((t.c/t.v)*100).toFixed(1),
+          ppesoMktg: (!t.v || !isFinite(t.m/t.v)) ? "--" : ((t.m/t.v)*100).toFixed(1),
+          roasVal: (!t.m || !isFinite(t.v/t.m)) ?  "--": (t.v/t.m).toFixed(2),
           yoyV: yoyLabel(t.v, tP.v),
           yoyG: yoyLabel(g, gP),
         };
