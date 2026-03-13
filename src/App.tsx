@@ -15,8 +15,7 @@ import {
   Cell,
 } from 'recharts';
 
-const SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbyPDdwkQEF7rqPXp9aD7c92dzgUZZPjUc3E-BUvVsVjtARZqU09tk2ELR9gtSHu_m7f/exec';
+const url = `${SHEET_URL}?t=${Date.now()}`;
 
 const MESES_ORDER = [
   'Ene',
