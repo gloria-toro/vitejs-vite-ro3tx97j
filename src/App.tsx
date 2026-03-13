@@ -81,6 +81,9 @@ interface Row {
   ventas: number;
   costo: number;
   marketing: number;
+  presupuesto_ventas: number; 
+  presupuesto_costo: number; 
+  presupuesto_marketing: number; 
 }
 interface Totals {
   v: number;
@@ -1996,7 +1999,7 @@ export default function Dashboard() {
     setLoading(true);
     setError(null);
     try {
-      const url = `https://script.google.com/macros/s/AKfycbyPDdwkQEF7rqPXp9aD7c92dzgUZZPjUc3E-BUvVsVjtARZqU09tk2ELR9gtSHu_m7f/exec?t=${Date.now()}`;
+      const url = `${SHEET_URL}?t=${Date.now()}`;
       const res = await fetch(url, { redirect: 'follow' });
       if (!res.ok) throw new Error('Error al conectar');
       const json = await res.json();
